@@ -1,0 +1,232 @@
+.header {
+  position: relative;
+  border: 1px solid $border;
+  border-width: 4px 0;
+  width: 100%;
+  z-index: 100;
+  .navEnabled & {
+    position: absolute;
+    top: 2rem;
+  }
+  &.fixed {
+    position: fixed;
+    top: 0rem;
+  }
+  &__container {
+    -js-display: flex;
+    display: flex;
+    align-items: stretch;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 100%;
+    align-items: flex-end;
+  }
+  .wrapper {
+    flex: 0;
+    position: relative;
+    height: 100%;
+    flex-basis: 75rem;
+    width: 0;
+  }
+  &__leftbg, &__rightbg {
+    flex: 1;
+    height: 4rem;
+  }
+  &__rightbg {
+    background-color: rgba(255,255,255,0.9);
+  }
+  &__bg {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 200px;
+    overflow: hidden;
+    img {
+      position: absolute;
+      left: 50%;
+      right: 0;
+      top: -9999px;
+      bottom: -9999px;
+      margin: auto 0;
+      margin-left: -1920/2 + px;
+      backface-visibility: hidden;
+      transform: translate3d(0,0,0);
+    }
+  }
+  &__col {
+    z-index: 2;
+    float: left;
+    position: absolute;
+    &:first-child {
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: $leftColWidth;
+      border: 1px solid $border;
+      border-width: 0 4px;
+    }
+    &:last-child {
+      left: $leftColWidth;
+      bottom: 0;
+      width: $siteWidth - $leftColWidth;
+    }
+  }
+  &__logo-area {
+    margin: auto;
+    position: absolute;
+    top: -4px;
+    left: 0;
+    bottom: -4px;
+    right: 0;
+    z-index: 1;
+    background-color: $bgColor;
+  }
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    backface-visibility: hidden;
+    transform: scale(1, 1) translate3d(-50%, -50%, 0);
+    transition: transform 0.3s ease-out;
+    transition-timing-function: $mTrans;
+    transform-origin: 10% 50%;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    img {
+      float: left;
+    }
+    span {
+      float: right;
+      width: 60%;
+      display: inline-block;
+      font-family: 'Geometric 706 Medium', sans-serif;
+    }
+    .fixed & {
+      transform: scale(0.8, 0.8) translate3d(-50%, -50%, 0);
+      transition-timing-function: $mTransHov;
+      transition-duration: 0.2s;
+    }
+  }
+  &__location {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: $siteWidth;
+    font-size: 0.9rem;
+    text-align: right;
+    padding-bottom: 0.7rem;
+    color: $textColor;
+    z-index: 1;
+    transform: translateZ(0);
+    div {
+      float: left;
+      padding-left: 4px;
+    }
+  }
+  &__eadress {
+    padding-left: 3rem;
+    & > a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: $highlight;
+      font-weight: bold;
+      &:hover, &:focus {
+        color: $highlight4;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__bold {
+    font-weight: bold;
+  }
+}
+
+.nav {
+  margin-bottom: -4px;
+  padding-bottom: 4px;
+  & > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    -js-display: flex;
+    display: flex;
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+    height: 4rem;
+    align-items: flex-end;
+    & > li {
+      position: relative;
+      display: block;
+      &:after {
+        border-right: 1px dotted #ccc;
+        top: 20%;
+        bottom: 10%;
+        content: '';
+        position: absolute;
+        right: 0;
+        margin: auto 0;
+        display: block;
+      }
+      &:last-child {
+        &:after {
+          content: none;
+          display: none;
+        }
+      }
+      & > a {
+        position: relative;
+        outline: none;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1rem;
+        text-decoration: none;
+        color: $textColor;
+        padding: 1.5rem 1rem;
+        display: block;
+        border-bottom: 4px solid $highlight;
+        bottom: -4px;
+        transition: 0.3s ease-out;
+        transition-timing-function: $mTrans;
+        transition-property: color, border-color;
+        &:hover, &:focus {
+          transition-duration: 0.2s;
+          transition-timing-function: $mTransHov;
+          border-bottom-color: $highlight2;
+          color: $highlight2;
+        }
+      }
+      &:first-child {
+        a {
+          &:before {
+            position: absolute;
+            bottom: -4px;
+            height: 4px;
+            left: -4px;
+            content: '';
+            height: 8rem;
+            width: 4px;
+            background: linear-gradient(to top, $highlight2 0, $highlight 4rem, $border 8rem);
+            -webkit-background-size: 300%;
+            background-size: 4px 12rem;
+            background-position: 0 0rem;
+            transition: 0.3s ease-out;
+            transition-timing-function: $mTrans;
+            transition-property: background-position;
+          }
+          &:hover, &:focus {
+            &:before {
+              transition-duration: 0.2s;
+              transition-timing-function: $mTransHov;
+              background-position: 0 -4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

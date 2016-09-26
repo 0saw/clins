@@ -1,5 +1,6 @@
 // import View from 'views/view';
 
-// const g = 9.81;
+require('./views/parallax');
 
-console.log('Hello World');
+$(function () {
+});

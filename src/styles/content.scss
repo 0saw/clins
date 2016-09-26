@@ -1,0 +1,114 @@
+.content {
+  -js-display: flex;
+  display: flex;
+  .content__col {
+    flex-grow: 1;
+  }
+  &_4x {
+    .content__col {
+      flex: 1;
+      padding: 0 0.5rem;
+      &:first-child {
+        flex: 0 1;
+        margin: 0 1.5rem 0 0;
+        flex-basis: 15rem;
+      }
+      &:last-child {
+        flex: 0 1;
+        flex-basis: 23rem;
+        margin: 0 0 0 1.5rem;
+      }
+    }
+  }
+  &_3x {
+    .content__col {
+      flex: 1;
+      &:first-child, &:last-child {
+        flex: 0 1;
+        margin-top: 0.3rem;
+      }
+      &:first-child {
+        flex-basis: 15rem;
+        margin-right: 1.8rem;
+      }
+      &:last-child {
+        flex-basis: 15rem;
+        margin-left: 1.8rem;
+      }
+    }
+  }
+
+  &_2x {
+    &.content_left {
+      .content__col {
+        flex: 1;
+        &:first-child {
+          flex: 0 1;
+          flex-basis: 15rem;
+          margin-top: 0.3rem;
+          margin-right: 1.5rem;
+        }
+      }
+    }
+    &.content_right {
+      .content__col {
+        flex: 1;
+        &:last-child {
+          flex: 0 1;
+          flex-basis: 15rem;
+          margin-top: 0.3rem;
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+  h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $textColor;
+  }
+}
+
+
+.breadcrumbs {
+  padding: 0;
+  margin: 0;
+  margin: 0.8rem 0 0.8rem 0.6rem;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  list-style: none;
+  li {
+    display: inline-block;
+    a {
+      display: inline-block;
+      padding-right: 0.6rem;
+      position: relative;
+      color: #999;
+      text-decoration: none;
+      &:after {
+        position: absolute;
+        content: "›";
+        right: 0.1em;
+        line-height: 0.9rem;
+        top: -0.05rem;
+        pointer-events: none;
+      }
+      &:hover {
+        color: $highlight4;
+        text-decoration: underline;
+        &:after {
+          text-decoration: none;
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+
+.sidebar {
+  &__block {
+    margin-bottom: 1rem;
+  }
+}

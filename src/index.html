@@ -1,36 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>Gulp Frontend Boilerplate</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="robots" content="noodp, noydir" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+ 
 
-	<!-- @if ENV='dev' -->
-	<link rel="stylesheet" href="styles/main.css">
-	<!-- @endif -->
-	<!-- @if ENV='prod' -->
-	<link rel="stylesheet" href="styles/main.min.css">
-	<!-- @endif -->
+  <title>clins.ru</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=latin,cyrillic-ext">
+  
+  <!-- @if ENV='dev' -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- @endif -->
+  <!-- @if ENV='prod' -->
+  <link rel="stylesheet" href="styles/main.min.css">
+  <!-- @endif -->
 
-	<!-- @include inc/_meta.html -->
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
 
-	<!-- @include inc/_favicons.html -->
+  <!-- @include inc/_favicons.html -->
 </head>
-<body>
-	<!-- @include inc/_browserhappy.html -->
+<body class="home" itemscope itemtype="http://schema.org/WebPage">
+  <!-- @include inc/_browserhappy.html -->
 
-	<div id="main"></div>
+  <div id="main">
+    <!-- @include inc/header.html -->
+    <div class="wrapper">
+      <ul class="breadcrumbs" id="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="index.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <span itemprop="name">Главная</span>
+          </a>
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="catalog.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <span itemprop="name">Каталог</span>
+          </a>
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="category.html" itemscope itemtype="http://schema.org/Thing" itemprop="item">
+            <span itemprop="name">Бренд</span>
+          </a>
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <span itemprop="name">Продукт</span>
+        </li>
+      </ul>
+      <div class="content content_3x">
+        <div class="content__col">
+          <div class="sidebar">
+            <div class="sidebar__block sidebar__block_nav">
+              <!-- @include inc/sidecatalog-alt.html -->
+            </div>
+          </div>
+        </div>
+        <div class="content__col">
+          <h1>Торгово-монтажная компания <br>Климатические Инновационные Системы</h1>
+          <p>Заглушка текста.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At necessitatibus suscipit pariatur quod voluptatem saepe ratione praesentium distinctio molestiae, dolore, earum delectus aliquam! Possimus magni nam repudiandae, unde consequuntur veritatis.</p>
+          <p>Sed maxime quidem voluptatem qui eaque officiis harum vel natus facilis consequatur, accusamus tempore ea quibusdam ipsum deleniti, autem rem reiciendis porro, repellendus illum repellat consectetur facere mollitia nesciunt. Optio?</p>
+          <p>Dolores deserunt perspiciatis veniam quos accusantium fugit vel nesciunt, doloribus animi! Sapiente laborum, corporis excepturi voluptates ratione totam similique, eaque provident laboriosam, ab reiciendis quos blanditiis nobis, ex dolore natus.</p>
+        </div>
+        <div class="content__col">
+          <div class="sidebar">
+            <div class="sidebar__block sidebar__block_form">
+              <!-- @include inc/sideform.html -->
+            </div>
+            <div class="sidebar__block sidebar__block_news">
+              <!-- @include inc/sidenews.html -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- @include inc/footer.html -->    
+  </div>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.min.js"></script>
+  <!-- @if ENV='dev' -->
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- @endif -->
+  <!-- @if ENV='prod' -->
+  <script src="scripts/vendor.min.js"></script>
+  <script src="scripts/main.min.js"></script>
+  <!-- @endif -->
 
-	<!-- @if ENV='dev' -->
-	<script src="scripts/vendor.js"></script>
-	<script src="scripts/main.js"></script>
-	<!-- @endif -->
-	<!-- @if ENV='prod' -->
-	<script src="scripts/vendor.min.js"></script>
-	<script src="scripts/main.min.js"></script>
-	<!-- @endif -->
-
-	<!-- //@include inc/_analytics.html -->
+  <!-- //@include inc/_analytics.html -->
 </body>
 </html>

@@ -1,0 +1,40 @@
+.category {
+  &__container {
+    -js-display: flex;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center
+  }
+  &__item {
+    flex-basis: 50%;
+    -js-display: flex;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    color: $textColor;
+    text-decoration: none;
+    padding: 0 1rem 0 0;
+    &:nth-child(2n) {
+      padding: 0 0 0 1rem;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__image {
+    /*max-width: 60%;*/
+    flex-grow: 1;
+    -js-display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    margin-right: 1rem;
+    img {
+      max-width: 80%;
+    }
+  }
+  &__desc {
+    display: none;
+  }
+}

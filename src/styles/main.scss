@@ -6,4 +6,56 @@
 
 @import 'fonts/_fonts';
 
+$mTrans: $easeInSine;
+$mTransHov: $easeOutSine;
+$leftColWidth: 15rem;
+$siteWidth: 75rem;
+$textColor: #333;
+$highlight: #44B2DA;
+$highlight2: #20912E;
+$highlight3: #68BC3F;
+$highlight4: #3197BC;
+$highlight5: #2657a0;
+$highlight6: #427DD1;
+$border: #ddd;
+$bgColor: #fff;
+
+@import 'content';
+
+html, body {
+  background-color: $bgColor;
+}
+
+html {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  width: 75rem;
+  margin: 0 auto;
+}
+
+.cf:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+#main {
+  margin-top: 2rem;
+  .navEnabled & {
+    padding-top: 208px;
+  }
+}
+
 @import 'modules/**/*';
